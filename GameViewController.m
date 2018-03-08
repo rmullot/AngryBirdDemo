@@ -21,9 +21,6 @@
     // Get the SKScene from the loaded GKScene
     GameScene *sceneNode = (GameScene *)scene.rootNode;
     
-//    // Copy gameplay related content over to the scene
-//    sceneNode.entities = [scene.entities mutableCopy];
-//    sceneNode.graphs = [scene.graphs mutableCopy];
     
     // Set the scale mode to scale to fit the window
     sceneNode.scaleMode = SKSceneScaleModeAspectFill;

@@ -115,8 +115,8 @@
             _touchNode.position = location;
             
             /* Spring joint touch node and catapult arm */
-            SKPhysicsJointSpring *touchJoint = [SKPhysicsJointSpring jointWithBodyA:_touchNode.physicsBody bodyB:_catapultArm.physicsBody anchorA:location anchorB:location];
-            [self.physicsWorld addJoint:touchJoint];
+            _touchJoint = [SKPhysicsJointSpring jointWithBodyA:_touchNode.physicsBody bodyB:_catapultArm.physicsBody anchorA:location anchorB:location];
+            [self.physicsWorld addJoint:_touchJoint];
             
             /* Add a new penguin to the scene */
             ABReferenceNode *penguin = [ABReferenceNode nodeWithFileNamed:@"Penguin"];
@@ -129,8 +129,8 @@
             penguin.avatar.physicsBody.usesPreciseCollisionDetection = true;
             
             /* Setup pin joint between penguin and catapult arm */
-            SKPhysicsJointPin *penguinJoint = [SKPhysicsJointPin jointWithBodyA:_catapultArm.physicsBody bodyB:penguin.avatar.physicsBody anchor:penguin.avatar.position];
-            [self.physicsWorld addJoint:penguinJoint];
+            _penguinJoint = [SKPhysicsJointPin jointWithBodyA:_catapultArm.physicsBody bodyB:penguin.avatar.physicsBody anchor:penguin.avatar.position];
+            [self.physicsWorld addJoint:_penguinJoint];
             
             /* Set tracker to follow penguin */
             _trackerNode = penguin.avatar;

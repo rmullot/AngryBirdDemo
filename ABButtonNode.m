@@ -59,7 +59,7 @@
     }
     
     - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-//        selectedHandler();
+        _selectedHandler();
         _state = active;
     }
 @end

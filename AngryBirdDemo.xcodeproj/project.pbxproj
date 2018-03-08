@@ -44,10 +44,6 @@
 
 /* Begin PBXFileReference section */
 		7A0BE126204D9779003B739C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		7A0BE12C204D98EE003B739C /* SFX */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SFX; sourceTree = "<group>"; };
-		7A0BE130204D9F85003B739C /* Levels */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Levels; sourceTree = "<group>"; };
-		7A0BE131204D9F85003B739C /* Scenes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Scenes; sourceTree = "<group>"; };
-		7A0BE132204D9F85003B739C /* Effects */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Effects; sourceTree = "<group>"; };
 		7A0BE138204DA37B003B739C /* assets.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = assets.atlas; sourceTree = "<group>"; };
 		7A0BE189204F40C4003B739C /* ABReferenceNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABReferenceNode.m; sourceTree = "<group>"; };
 		7A0BE18A204F40C5003B739C /* ABReferenceNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABReferenceNode.h; sourceTree = "<group>"; };
@@ -218,10 +214,6 @@
 				7A0BE199204F4BD0003B739C /* Main.storyboard */,
 				7A0BE19A204F4BD1003B739C /* LaunchScreen.storyboard */,
 				7A0BE138204DA37B003B739C /* assets.atlas */,
-				7A0BE132204D9F85003B739C /* Effects */,
-				7A0BE130204D9F85003B739C /* Levels */,
-				7A0BE131204D9F85003B739C /* Scenes */,
-				7A0BE12C204D98EE003B739C /* SFX */,
 				B73789911807667A0076A88C /* Icons */,
 			);
 			name = Resources;
