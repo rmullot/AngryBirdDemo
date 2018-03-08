@@ -21,7 +21,7 @@
         if(self.view != nil){
             
             // Load the SKScene from 'GameScene.sks'
-            SKScene *scene = [SKScene nodeWithFileNamed: @"MainMenuScene"];
+            SKScene *scene = [SKScene nodeWithFileNamed: @"GameScene"];
             if(scene != nil){
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = SKSceneScaleModeAspectFit;
