@@ -21,7 +21,7 @@
 @property (nonatomic) SKNode *levelHolder;
 
 /* Tracking helpers */
-@property (nonatomic,getter= setTrackerNode) SKNode *trackerNode;
+@property (nonatomic) SKNode *trackerNode;
 @property (nonatomic) CGPoint lastTrackerPosition;
 @property (nonatomic) NSTimeInterval lastTimeInterval;
 

@@ -12,9 +12,9 @@
 @implementation ABButtonNode
 
 
-- (void) setState:(ABButtonNodeState)state {
-    _state = state;
-    switch(state) {
+- (void) setStateButton:(ABButtonNodeState)newValue {
+    _stateButton = newValue;
+    switch(newValue) {
     case active:
         /* Enable touch */
         self.userInteractionEnabled  = true;
@@ -55,11 +55,11 @@
     
     // MARK: - Touch handling
     - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-        _state = selected;
+        self.stateButton = selected;
     }
     
     - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
         _selectedHandler();
-        _state = active;
+        self.stateButton = active;
     }
 @end

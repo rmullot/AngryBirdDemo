@@ -16,6 +16,6 @@ typedef enum {
 
 @interface ABButtonNode : SKSpriteNode
 
-@property (nonatomic,getter= setState) ABButtonNodeState state;
+@property (nonatomic) ABButtonNodeState stateButton;
 @property (nonatomic, copy) void (^selectedHandler)(void);
 @end
