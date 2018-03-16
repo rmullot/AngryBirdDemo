@@ -244,27 +244,32 @@
 }
 -(void)dieDonut:(SKNode*)node{
     /* Donut death*/
-    if(node != nil)
+    if(node != nil && node.parent != nil)
     {
-        /* Load our particle effect */
-        SKEmitterNode *particles = [SKEmitterNode nodeWithFileNamed: @"DonutExplosion"];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            /* Load our particle effect */
+            SKEmitterNode *particles = [SKEmitterNode nodeWithFileNamed: @"DonutExplosion"];
+            
+            /* Convert node location (currently inside LevelHolder, to scene space) */
+            particles.position = [self convertPoint:node.position fromNode:node];
+            
+            /* Restrict total particles to reduce runtime of particle */
+            particles.numParticlesToEmit = 10;
+            
+            /* Add particles to scene */
+            [self addChild:particles];
+            
+            /* Play SFX */
+            SKAction *donutSFX = [SKAction playSoundFileNamed:@"sfx_donut" waitForCompletion: false];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self runAction:donutSFX completion:^{
+                    [node removeFromParent];//runAction:donutDeath
+                }];
+            }) ;
+        });
+       
         
-        /* Convert node location (currently inside LevelHolder, to scene space) */
-        particles.position = [self convertPoint:node.position fromNode:node];
-        
-        /* Restrict total particles to reduce runtime of particle */
-        particles.numParticlesToEmit = 25;
-        
-        /* Add particles to scene */
-        [self addChild:particles];
-        
-        /* Play SFX */
-        SKAction *donutSFX = [SKAction playSoundFileNamed:@"sfx_donut" waitForCompletion: false];
-        [self runAction:donutSFX];
-        
-        /* Create our donut removal action */
-        SKAction *donutDeath = [SKAction removeFromParent];
-        [node runAction:donutDeath];
+
     }
   
 }
