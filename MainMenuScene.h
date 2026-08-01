@@ -11,4 +11,5 @@
 
 @interface MainMenuScene : SKScene
 @property (nonatomic) ABButtonNode *buttonPlay;
+@property (nonatomic) SKSpriteNode *background;
 @end

@@ -16,6 +16,7 @@
 @property (nonatomic) SKSpriteNode *catapult;
 @property (nonatomic) SKSpriteNode *cantileverNode;
 @property (nonatomic) SKSpriteNode *touchNode;
+@property (nonatomic) SKSpriteNode *background;
 
 /* Level loader holder */
 @property (nonatomic) SKNode *levelHolder;
@@ -28,6 +29,9 @@
 /* Physics helpers */
 @property (nonatomic) SKPhysicsJointSpring *touchJoint;
 @property (nonatomic) SKPhysicsJointPin *penguinJoint;
+@property (nonatomic) BOOL armHasBeenPulled;
+@property (nonatomic) BOOL armWasPulledNegative;
+@property (nonatomic) BOOL touchHasEnded;
 
 /* UI Connections */
 @property (nonatomic) ABButtonNode *buttonRestart;
