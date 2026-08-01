@@ -22,16 +22,18 @@
     GameScene *sceneNode = (GameScene *)scene.rootNode;
     
     
-    // Set the scale mode to scale to fit the window
-    sceneNode.scaleMode = SKSceneScaleModeAspectFill;
+    // Resize the scene to match the actual screen size, so its coordinate
+    // system (camera bounds, node positions) reflects the real device size
+    // instead of a fixed design canvas.
+    sceneNode.scaleMode = SKSceneScaleModeResizeFill;
     
     SKView *skView = (SKView *)self.view;
     
     // Present the scene
     [skView presentScene:sceneNode];
     
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
+    skView.showsFPS = NO;
+    skView.showsNodeCount = NO;
 }
 
 - (BOOL)shouldAutorotate {
@@ -52,6 +54,10 @@
 }
 
 - (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
+- (BOOL)prefersHomeIndicatorAutoHidden {
     return YES;
 }
 
